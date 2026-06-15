@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+
+<html class="light" lang="fr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>2iE ESG Manager - Analyse Avancée</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;900&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary-fixed": "#00210e",
+                        "inverse-primary": "#83d99d",
+                        "secondary-fixed": "#ffdcc6",
+                        "surface-container-lowest": "#ffffff",
+                        "outline": "#6f7a70",
+                        "on-secondary-fixed-variant": "#723600",
+                        "on-secondary-container": "#642f00",
+                        "tertiary-fixed-dim": "#92d5a7",
+                        "error": "#ba1a1a",
+                        "on-background": "#0b1c30",
+                        "surface-variant": "#d3e4fe",
+                        "primary-fixed": "#9ef5b8",
+                        "surface-bright": "#f8f9ff",
+                        "surface-container-highest": "#d3e4fe",
+                        "secondary-container": "#ff8928",
+                        "primary": "#004d28",
+                        "on-tertiary-fixed": "#00210f",
+                        "surface-container-high": "#dce9ff",
+                        "on-secondary-fixed": "#311300",
+                        "tertiary": "#014e2b",
+                        "on-error": "#ffffff",
+                        "surface-container": "#e5eeff",
+                        "on-primary": "#ffffff",
+                        "on-tertiary-fixed-variant": "#08522e",
+                        "primary-container": "#006838",
+                        "error-container": "#ffdad6",
+                        "outline-variant": "#bec9be",
+                        "inverse-surface": "#213145",
+                        "on-primary-container": "#8ee4a8",
+                        "surface-container-low": "#eff4ff",
+                        "background": "#f8f9ff",
+                        "primary-fixed-dim": "#83d99d",
+                        "on-error-container": "#93000a",
+                        "on-surface": "#0b1c30",
+                        "secondary": "#964900",
+                        "surface-tint": "#0b6d3c",
+                        "tertiary-container": "#246640",
+                        "on-secondary": "#ffffff",
+                        "on-surface-variant": "#3f4940",
+                        "inverse-on-surface": "#eaf1ff",
+                        "secondary-fixed-dim": "#ffb786",
+                        "surface": "#f8f9ff",
+                        "on-primary-fixed-variant": "#00522b",
+                        "tertiary-fixed": "#adf2c1",
+                        "on-tertiary-container": "#9de1b2",
+                        "on-tertiary": "#ffffff",
+                        "surface-dim": "#cbdbf5"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "base": "4px",
+                        "md": "24px",
+                        "gutter": "24px",
+                        "margin-desktop": "48px",
+                        "xs": "8px",
+                        "margin-mobile": "16px",
+                        "sm": "16px",
+                        "xl": "64px",
+                        "lg": "40px"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["Montserrat"],
+                        "label-md": ["Inter"],
+                        "body-md": ["Inter"],
+                        "body-sm": ["Inter"],
+                        "display-lg": ["Montserrat"],
+                        "body-lg": ["Inter"],
+                        "headline-sm": ["Montserrat"]
+                    },
+                    "fontSize": {
+                        "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                        "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "headline-sm": ["20px", {"lineHeight": "28px", "fontWeight": "600"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body { background-color: #eef4fb; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .analytics-card {
+            background: rgba(255, 255, 255, 0.95);
+            border: 1px solid rgba(226, 232, 240, 0.9);
+            border-radius: 28px;
+            box-shadow: 0 24px 38px rgba(15, 23, 42, 0.08);
+        }
+        .metric-chip {
+            border-radius: 999px;
+            padding: 0.4rem 1rem;
+            background: rgba(0, 77, 40, 0.08);
+            color: #004d28;
+            font-weight: 700;
+        }
+    </style>
+</head>
+<body class="font-body-md text-on-surface">
+<div class="min-h-screen">
+<header class="fixed inset-x-0 top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-outline-variant shadow-sm">
+<div class="mx-auto flex h-16 items-center justify-between px-md">
+<div class="flex items-center gap-sm">
+<button class="p-2 rounded-xl bg-surface-container-lowest text-on-surface hover:bg-surface-container-high transition-all">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<div>
+<p class="text-xs uppercase tracking-[0.24em] text-outline">Analyse / Insights</p>
+<h1 class="text-headline-sm font-bold">Analyse avancée ESG</h1>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<button class="p-3 rounded-2xl bg-surface-container-high text-on-surface hover:bg-surface-container-low transition-all">
+<span class="material-symbols-outlined">help_outline</span>
+</button>
+<button class="flex items-center gap-2 px-4 py-2 bg-primary text-white rounded-2xl hover:opacity-90 transition-all">
+<span class="material-symbols-outlined">insights</span>
+<span class="font-label-md">Nouvelle analyse</span>
+</button>
+</div>
+</div>
+</header>
+<main class="pt-20 px-md pb-xl">
+<div class="mx-auto max-w-[1400px] space-y-xl">
+<section class="grid grid-cols-1 xl:grid-cols-[1.1fr_0.9fr] gap-lg">
+<div class="analytics-card p-lg space-y-lg">
+<div class="flex flex-col gap-4 md:flex-row md:items-start md:justify-between">
+<div>
+<p class="text-xs uppercase tracking-[0.24em] text-outline">Vue globale</p>
+<h2 class="text-headline-md font-bold text-on-surface">Insights basés sur les données</h2>
+<p class="text-body-sm text-on-surface-variant mt-2">Des corrélations, prévisions et anomalies pour orienter les décisions ESG.</p>
+</div>
+<div class="flex flex-wrap gap-3">
+<button class="px-4 py-2 rounded-full bg-secondary-container text-secondary font-semibold hover:bg-secondary/10 transition-all">Prévisions</button>
+<button class="px-4 py-2 rounded-full border border-outline-variant text-on-surface hover:bg-surface-container-low transition-all">Filtrer</button>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+<div class="rounded-3xl bg-surface-container-low p-5">
+<p class="text-xs uppercase tracking-[0.24em] text-outline mb-2">Prédictions</p>
+<h3 class="text-3xl font-bold text-primary">86%</h3>
+<p class="text-sm text-on-surface-variant mt-2">Probabilité d'atteinte des objectifs RSE d'ici 2025.</p>
+</div>
+<div class="rounded-3xl bg-surface-container-low p-5">
+<p class="text-xs uppercase tracking-[0.24em] text-outline mb-2">Anomalies</p>
+<h3 class="text-3xl font-bold text-error">3</h3>
+<p class="text-sm text-on-surface-variant mt-2">Points de données nécessitant une revue.</p>
+</div>
+<div class="rounded-3xl bg-surface-container-low p-5">
+<p class="text-xs uppercase tracking-[0.24em] text-outline mb-2">Corrélations</p>
+<h3 class="text-3xl font-bold text-secondary-container">72%</h3>
+<p class="text-sm text-on-surface-variant mt-2">Taux de corrélation entre mobilité et émission.</p>
+</div>
+</div>
+<div class="rounded-3xl bg-white p-6 border border-outline-variant/30">
+<div class="flex items-center justify-between mb-4">
+<div>
+<p class="text-xs uppercase tracking-[0.24em] text-outline">Tendance récente</p>
+<h3 class="text-headline-sm font-semibold">Projection CO₂ 2024</h3>
+</div>
+<span class="metric-chip">+1.8% / Q</span>
+</div>
+<div class="grid grid-cols-1 gap-4 md:grid-cols-2">
+<div class="rounded-3xl bg-surface-container-low p-4">
+<p class="text-xs uppercase tracking-[0.24em] text-outline mb-3">Émissions</p>
+<p class="font-bold text-primary text-2xl">342 tCO₂e</p>
+</div>
+<div class="rounded-3xl bg-surface-container-low p-4">
+<p class="text-xs uppercase tracking-[0.24em] text-outline mb-3">Énergie verte</p>
+<p class="font-bold text-secondary-container text-2xl">22.5%</p>
+</div>
+</div>
+</div>
+</div>
+<aside class="space-y-lg">
+<div class="analytics-card p-lg rounded-3xl">
+<div class="flex items-center justify-between mb-5">
+<h3 class="text-headline-sm font-bold">Anomalies détectées</h3>
+<button class="text-primary hover:text-primary-container transition-colors">Voir toutes</button>
+</div>
+<ul class="space-y-4 text-body-sm text-on-surface-variant">
+<li class="rounded-3xl bg-surface-container-low p-4 flex items-start gap-3">
+<span class="material-symbols-outlined text-error">warning</span>
+<div>
+<p class="font-semibold">Surcharge consommation d'eau</p>
+<p class="text-xs mt-1">Bâtiment D dépasse de 15% la moyenne mensuelle.</p>
+</div>
+</li>
+<li class="rounded-3xl bg-surface-container-low p-4 flex items-start gap-3">
+<span class="material-symbols-outlined text-secondary">analytics</span>
+<div>
+<p class="font-semibold">Variation CO₂</p>
+<p class="text-xs mt-1">Fluctuation anormale liée aux générateurs backup.</p>
+</div>
+</li>
+<li class="rounded-3xl bg-surface-container-low p-4 flex items-start gap-3">
+<span class="material-symbols-outlined text-primary">alarm</span>
+<div>
+<p class="font-semibold">Engagement formation</p>
+<p class="text-xs mt-1">Baisse de participation aux sessions ESG.</p>
+</div>
+</li>
+</ul>
+</div>
+<div class="analytics-card p-lg rounded-3xl">
+<h3 class="text-headline-sm font-bold mb-5">Recommandations</h3>
+<div class="space-y-4 text-body-sm text-on-surface-variant">
+<div class="rounded-3xl bg-surface-container-low p-4">
+<p class="font-semibold">Optimiser la consommation hydraulique</p>
+<p class="text-xs mt-1">Installer capteurs intelligents et alertes temps réel.</p>
+</div>
+<div class="rounded-3xl bg-surface-container-low p-4">
+<p class="font-semibold">Augmenter visibilité des objectifs</p>
+<p class="text-xs mt-1">Partage des résultats avec les équipes opérationnelles.</p>
+</div>
+<div class="rounded-3xl bg-surface-container-low p-4">
+<p class="font-semibold">Allouer ressources rapides</p>
+<p class="text-xs mt-1">Plan d'action concentré sur les sites à risque.</p>
+</div>
+</div>
+</div>
+</aside>
+</section>
+<section class="grid grid-cols-1 lg:grid-cols-3 gap-lg">
+<div class="analytics-card p-lg rounded-3xl">
+<h3 class="text-headline-sm font-bold mb-5">Explorations de données</h3>
+<ul class="space-y-4 text-body-sm text-on-surface-variant">
+<li class="rounded-3xl bg-surface-container-low p-4">Carte thermique consommation</li>
+<li class="rounded-3xl bg-surface-container-low p-4">Analyse de corrélation socio-environnementale</li>
+<li class="rounded-3xl bg-surface-container-low p-4">Prévisions d'impact CO₂</li>
+</ul>
+</div>
+<div class="analytics-card p-lg rounded-3xl">
+<h3 class="text-headline-sm font-bold mb-5">Période analysée</h3>
+<p class="text-body-sm text-on-surface-variant">Janvier 2024 - Juin 2024</p>
+<div class="mt-6 grid grid-cols-2 gap-4">
+<div class="rounded-3xl bg-surface-container-low p-4">
+<p class="text-xs uppercase tracking-[0.24em] text-outline">Sites surveillés</p>
+<p class="font-semibold text-headline-sm">5</p>
+</div>
+<div class="rounded-3xl bg-surface-container-low p-4">
+<p class="text-xs uppercase tracking-[0.24em] text-outline">Sources de données</p>
+<p class="font-semibold text-headline-sm">12</p>
+</div>
+</div>
+</div>
+<div class="analytics-card p-lg rounded-3xl">
+<h3 class="text-headline-sm font-bold mb-5">Perspectives</h3>
+<p class="text-body-sm text-on-surface-variant">La supervision algorithmique améliore la réactivité aux risques et augmente les chances de conformité.</p>
+<div class="mt-6 grid grid-cols-1 gap-3 text-sm text-on-surface-variant">
+<p class="flex items-center gap-2"><span class="material-symbols-outlined text-secondary">check_circle</span>Utiliser l'IA pour les prévisions de consommation</p>
+<p class="flex items-center gap-2"><span class="material-symbols-outlined text-secondary">check_circle</span>Comparer sites par indicateur</p>
+<p class="flex items-center gap-2"><span class="material-symbols-outlined text-secondary">check_circle</span>Renforcer le reporting temps réel</p>
+</div>
+</div>
+</section>
+</div>
+</main>
+</div>
+</body></html>

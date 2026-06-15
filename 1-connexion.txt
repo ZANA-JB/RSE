@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+
+<html class="light" lang="fr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Connexion | 2iE ESG Manager</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;900&amp;family=Inter:wght@400;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-primary-fixed": "#00210e",
+                    "inverse-primary": "#83d99d",
+                    "secondary-fixed": "#ffdcc6",
+                    "surface-container-lowest": "#ffffff",
+                    "outline": "#6f7a70",
+                    "on-secondary-fixed-variant": "#723600",
+                    "on-secondary-container": "#642f00",
+                    "tertiary-fixed-dim": "#92d5a7",
+                    "error": "#ba1a1a",
+                    "on-background": "#0b1c30",
+                    "surface-variant": "#d3e4fe",
+                    "primary-fixed": "#9ef5b8",
+                    "surface-bright": "#f8f9ff",
+                    "surface-container-highest": "#d3e4fe",
+                    "secondary-container": "#ff8928",
+                    "primary": "#004d28",
+                    "on-tertiary-fixed": "#00210f",
+                    "surface-container-high": "#dce9ff",
+                    "on-secondary-fixed": "#311300",
+                    "tertiary": "#014e2b",
+                    "on-error": "#ffffff",
+                    "surface-container": "#e5eeff",
+                    "on-primary": "#ffffff",
+                    "on-tertiary-fixed-variant": "#08522e",
+                    "primary-container": "#006838",
+                    "error-container": "#ffdad6",
+                    "outline-variant": "#bec9be",
+                    "inverse-surface": "#213145",
+                    "on-primary-container": "#8ee4a8",
+                    "surface-container-low": "#eff4ff",
+                    "background": "#f8f9ff",
+                    "primary-fixed-dim": "#83d99d",
+                    "on-error-container": "#93000a",
+                    "on-surface": "#0b1c30",
+                    "secondary": "#964900",
+                    "surface-tint": "#0b6d3c",
+                    "tertiary-container": "#246640",
+                    "on-secondary": "#ffffff",
+                    "on-surface-variant": "#3f4940",
+                    "inverse-on-surface": "#eaf1ff",
+                    "secondary-fixed-dim": "#ffb786",
+                    "surface": "#f8f9ff",
+                    "on-primary-fixed-variant": "#00522b",
+                    "tertiary-fixed": "#adf2c1",
+                    "on-tertiary-container": "#9de1b2",
+                    "on-tertiary": "#ffffff",
+                    "surface-dim": "#cbdbf5"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "base": "4px",
+                    "md": "24px",
+                    "gutter": "24px",
+                    "margin-desktop": "48px",
+                    "xs": "8px",
+                    "margin-mobile": "16px",
+                    "sm": "16px",
+                    "xl": "64px",
+                    "lg": "40px"
+            },
+            "fontFamily": {
+                    "headline-md": ["Montserrat"],
+                    "label-md": ["Inter"],
+                    "body-md": ["Inter"],
+                    "body-sm": ["Inter"],
+                    "display-lg": ["Montserrat"],
+                    "body-lg": ["Inter"],
+                    "display-lg-mobile": ["Montserrat"],
+                    "headline-sm": ["Montserrat"]
+            },
+            "fontSize": {
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "display-lg-mobile": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                    "headline-sm": ["20px", {"lineHeight": "28px", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      .glass-card {
+        background: rgba(255, 255, 255, 0.85);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+      }
+      .custom-shadow {
+        box-shadow: 0 4px 6px -1px rgba(0, 104, 56, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+      }
+      body {
+        background-color: #f8f9ff;
+      }
+    </style>
+</head>
+<body class="min-h-screen flex items-center justify-center font-body-md text-on-surface overflow-hidden">
+<!-- Atmospheric Background with Engineering/Water Suggestion -->
+<div class="fixed inset-0 z-0">
+<div class="absolute inset-0 bg-gradient-to-br from-surface-container-low to-surface-bright opacity-90"></div>
+<img class="absolute inset-0 w-full h-full object-cover mix-blend-overlay opacity-30 grayscale" data-alt="A sophisticated architectural and engineering landscape showing sustainable infrastructure like water filtration systems and solar panels. The image features clean lines, bright natural daylight, and a focus on environmental stewardship in a modern West African context. The overall tone is professional, technical, and light-themed with subtle green and blue undertones." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCCdXmeVHRshLtTbf6iuzf_y2dVsjthF-KGwsSQ3zwboWxGbvoXEbsHGJ8_azWIRgw4Wmgt3X3gQMwVE-9cX7wIE1BQSu_wY3ipWuJHXJvweDOAs3dUryI1JPgf93LXaw4K6kFEzElGv2-_KiqD82qxujVHsReEt8oqhbv5niADb3iW-JLBC4TrVyw5goIJ6T9OsTh3c0EO986Vzbmi4WzeP6kTARe62hD83Iz95cNYO2-VgVGK3NbnwZlsmMgxEYDTgBaJ-sgWfmqB"/>
+<!-- Subtle Animated Grain/Atmosphere Overlay -->
+<div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10 pointer-events-none"></div>
+</div>
+<!-- Main Content Canvas -->
+<main class="relative z-10 w-full max-w-[1440px] px-margin-mobile md:px-margin-desktop flex flex-col items-center justify-center">
+<!-- Login Container - Bento/Asymmetric approach -->
+<div class="grid grid-cols-1 lg:grid-cols-12 w-full max-w-5xl gap-lg items-center">
+<!-- Left Side: Branding & Value Prop (Asymmetric) -->
+<div class="lg:col-span-6 space-y-md text-left hidden lg:block">
+<div class="flex items-center gap-xs mb-lg">
+<div class="w-12 h-12 bg-primary rounded-lg flex items-center justify-center text-on-primary">
+<span class="material-symbols-outlined text-[32px]">water_drop</span>
+</div>
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm font-bold text-primary">2iE ESG Manager</span>
+<span class="font-label-md text-label-md text-on-surface-variant tracking-wider">ENGINEERING SUSTAINABILITY</span>
+</div>
+</div>
+<h1 class="font-display-lg text-display-lg text-on-background leading-tight">
+                    Pilotez votre <span class="text-primary-container">impact</span> durable.
+                </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-md">
+                    Plateforme centralisée pour la gestion des indicateurs environnementaux, sociaux et de gouvernance au service de l'ingénierie d'excellence.
+                </p>
+<div class="grid grid-cols-2 gap-sm mt-xl">
+<div class="p-sm bg-white/40 border border-outline-variant rounded-xl flex flex-col gap-xs">
+<span class="material-symbols-outlined text-primary">analytics</span>
+<span class="font-label-md">Analyses Précises</span>
+</div>
+<div class="p-sm bg-white/40 border border-outline-variant rounded-xl flex flex-col gap-xs">
+<span class="material-symbols-outlined text-primary">security</span>
+<span class="font-label-md">Accès Sécurisé</span>
+</div>
+</div>
+</div>
+<!-- Right Side: Login Form -->
+<div class="lg:col-span-6 flexjustify-center lg:justify-end">
+<div class="glass-card w-full max-w-md p-lg rounded-xl border border-white/50 custom-shadow">
+<!-- Mobile Logo (visible only on small screens) -->
+<div class="lg:hidden flex flex-col items-center mb-lg text-center">
+<div class="w-16 h-16 bg-primary rounded-xl flex items-center justify-center text-on-primary mb-sm">
+<span class="material-symbols-outlined text-[40px]">water_drop</span>
+</div>
+<h2 class="font-headline-md text-headline-md text-primary">2iE ESG Manager</h2>
+<span class="font-label-md text-label-md text-on-surface-variant">ENGINEERING SUSTAINABILITY</span>
+</div>
+<div class="mb-lg">
+<h3 class="font-headline-sm text-headline-sm text-on-background mb-base">Connexion</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Veuillez entrer vos identifiants institutionnels.</p>
+</div>
+<form action="#" class="space-y-sm" method="POST" onsubmit="return false;">
+<!-- Email Field -->
+<div class="space-y-base">
+<label class="font-label-md text-label-md text-on-surface-variant block ml-1" for="email">Email professionnel</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline-variant text-[20px]">mail</span>
+<input class="w-full pl-10 pr-4 py-3 bg-white border border-outline-variant rounded-lg focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all duration-200 outline-none font-body-md" id="email" name="email" placeholder="nom@2ie-edu.org" required="" type="email"/>
+</div>
+</div>
+<!-- Password Field -->
+<div class="space-y-base">
+<div class="flex justify-between items-center px-1">
+<label class="font-label-md text-label-md text-on-surface-variant" for="password">Mot de passe</label>
+<a class="text-secondary font-label-md hover:underline transition-all" href="#">Oublié ?</a>
+</div>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline-variant text-[20px]">lock</span>
+<input class="w-full pl-10 pr-12 py-3 bg-white border border-outline-variant rounded-lg focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all duration-200 outline-none font-body-md" id="password" name="password" placeholder="••••••••" required="" type="password"/>
+<button class="absolute right-3 top-1/2 -translate-y-1/2 text-outline-variant hover:text-on-surface transition-colors" type="button">
+<span class="material-symbols-outlined text-[20px]">visibility</span>
+</button>
+</div>
+</div>
+<div class="pt-sm">
+<button class="w-full bg-primary text-on-primary py-4 rounded-lg font-label-md text-base tracking-wide flex items-center justify-center gap-xs hover:bg-primary-container active:scale-[0.98] transition-all duration-200 shadow-lg shadow-primary/20" type="submit">
+<span>SE CONNECTER</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+</div>
+</form>
+<div class="mt-lg pt-md border-t border-outline-variant/30 text-center">
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+                            Accès restreint aux membres du personnel et étudiants 2iE. 
+                            <br/>Besoin d'aide ? <a class="text-primary font-semibold hover:underline" href="#">Contactez le support IT</a>
+</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Institutional Footer - Minimalistic -->
+<footer class="mt-xl py-md w-full max-w-5xl border-t border-outline-variant/20 flex flex-col md:flex-row justify-between items-center gap-sm">
+<div class="flex items-center gap-sm opacity-60">
+<img alt="2iE Logo Small" class="h-8 object-contain" data-alt="The official circular logo of the 2iE Institute featuring the acronym 2iE with a wave design below, symbolizing water and engineering excellence. The colors are deep green and white, professionally rendered in a high-resolution vector style suitable for a footer." src="https://lh3.googleusercontent.com/aida-public/AB6AXuABWtxwl6RG823wmSuaB7raI8lpf0SC-VYiyeZHf6YXkhQ_SllMGQRTEORwK3sd6BpV9HFwZDXgoS7kA1wzPgNuDi6ZgyEiqP_biUncvKVJxHjgzQsKuZa-gtqTpdWMDnTx_F1l0MuObIl5UN-crxKGQ0K0V5Eed6BjfhG2pImxWzeg1fqgwPxxJclbn69r05iSzq2lDtLzOJBq3GLV3tRpZdWFE3mXL_7eA9P2EIAtc1tw7Pe30nVu7RXj0hs8aEhuftZP8NWshVCo"/>
+<span class="font-label-md text-label-md text-on-surface-variant">© 2024 Institut 2iE. Tous droits réservés.</span>
+</div>
+<div class="flex gap-md opacity-70">
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" href="#">Confidentialité</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" href="#">Conditions d'Utilisation</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" href="#">2ie-edu.org</a>
+</div>
+</footer>
+</main>
+<!-- Visual Polish: Decorative Elements -->
+<div class="fixed bottom-0 right-0 w-64 h-64 bg-primary opacity-[0.03] rounded-full blur-[100px] -mr-32 -mb-32"></div>
+<div class="fixed top-0 left-0 w-96 h-96 bg-secondary opacity-[0.02] rounded-full blur-[120px] -ml-48 -mt-48"></div>
+<script>
+        // Simple Interaction Script
+        document.addEventListener('DOMContentLoaded', () => {
+            const inputs = document.querySelectorAll('input');
+            
+            inputs.forEach(input => {
+                input.addEventListener('focus', () => {
+                    input.parentElement.querySelector('.material-symbols-outlined').style.color = '#004d28';
+                });
+                
+                input.addEventListener('blur', () => {
+                    input.parentElement.querySelector('.material-symbols-outlined').style.color = '#6f7a70';
+                });
+            });
+
+            // Password Toggle Visibility
+            const passToggle = document.querySelector('button[type="button"]');
+            const passInput = document.getElementById('password');
+            let isVisible = false;
+
+            if (passToggle && passInput) {
+                passToggle.addEventListener('click', () => {
+                    isVisible = !isVisible;
+                    passInput.type = isVisible ? 'text' : 'password';
+                    passToggle.querySelector('span').innerText = isVisible ? 'visibility_off' : 'visibility';
+                });
+            }
+        });
+    </script>
+</body></html>

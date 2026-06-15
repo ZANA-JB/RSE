@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+
+<html class="light" lang="fr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>2iE ESG Manager - Notifications & Alertes</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;900&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary-fixed": "#00210e",
+                        "inverse-primary": "#83d99d",
+                        "secondary-fixed": "#ffdcc6",
+                        "surface-container-lowest": "#ffffff",
+                        "outline": "#6f7a70",
+                        "on-secondary-fixed-variant": "#723600",
+                        "on-secondary-container": "#642f00",
+                        "tertiary-fixed-dim": "#92d5a7",
+                        "error": "#ba1a1a",
+                        "on-background": "#0b1c30",
+                        "surface-variant": "#d3e4fe",
+                        "primary-fixed": "#9ef5b8",
+                        "surface-bright": "#f8f9ff",
+                        "surface-container-highest": "#d3e4fe",
+                        "secondary-container": "#ff8928",
+                        "primary": "#004d28",
+                        "on-tertiary-fixed": "#00210f",
+                        "surface-container-high": "#dce9ff",
+                        "on-secondary-fixed": "#311300",
+                        "tertiary": "#014e2b",
+                        "on-error": "#ffffff",
+                        "surface-container": "#e5eeff",
+                        "on-primary": "#ffffff",
+                        "on-tertiary-fixed-variant": "#08522e",
+                        "primary-container": "#006838",
+                        "error-container": "#ffdad6",
+                        "outline-variant": "#bec9be",
+                        "inverse-surface": "#213145",
+                        "on-primary-container": "#8ee4a8",
+                        "surface-container-low": "#eff4ff",
+                        "background": "#f8f9ff",
+                        "primary-fixed-dim": "#83d99d",
+                        "on-error-container": "#93000a",
+                        "on-surface": "#0b1c30",
+                        "secondary": "#964900",
+                        "surface-tint": "#0b6d3c",
+                        "tertiary-container": "#246640",
+                        "on-secondary": "#ffffff",
+                        "on-surface-variant": "#3f4940",
+                        "inverse-on-surface": "#eaf1ff",
+                        "secondary-fixed-dim": "#ffb786",
+                        "surface": "#f8f9ff",
+                        "on-primary-fixed-variant": "#00522b",
+                        "tertiary-fixed": "#adf2c1",
+                        "on-tertiary-container": "#9de1b2",
+                        "on-tertiary": "#ffffff",
+                        "surface-dim": "#cbdbf5"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "base": "4px",
+                        "md": "24px",
+                        "gutter": "24px",
+                        "margin-desktop": "48px",
+                        "xs": "8px",
+                        "margin-mobile": "16px",
+                        "sm": "16px",
+                        "xl": "64px",
+                        "lg": "40px"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["Montserrat"],
+                        "label-md": ["Inter"],
+                        "body-md": ["Inter"],
+                        "body-sm": ["Inter"],
+                        "display-lg": ["Montserrat"],
+                        "body-lg": ["Inter"],
+                        "headline-sm": ["Montserrat"]
+                    },
+                    "fontSize": {
+                        "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                        "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "headline-sm": ["20px", {"lineHeight": "28px", "fontWeight": "600"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body { background-color: #f4f7f6; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .alert-card {
+            border-radius: 26px;
+            background: #ffffff;
+            border: 1px solid rgba(226, 232, 240, 0.85);
+            box-shadow: 0 18px 40px rgba(15, 23, 42, 0.06);
+        }
+        .status-badge {
+            padding: 0.35rem 0.85rem;
+            border-radius: 999px;
+            font-size: 0.75rem;
+            font-weight: 700;
+        }
+    </style>
+</head>
+<body class="font-body-md text-on-surface">
+<div class="min-h-screen">
+<header class="fixed inset-x-0 top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-outline-variant shadow-sm">
+<div class="mx-auto flex h-16 items-center justify-between px-md">
+<div class="flex items-center gap-sm">
+<button class="p-2 rounded-xl bg-surface-container-lowest text-on-surface hover:bg-surface-container-high transition-all">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<div>
+<p class="text-xs uppercase tracking-[0.24em] text-outline">Alertes / Notifications</p>
+<h1 class="text-headline-sm font-bold">Notifications & Alertes</h1>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<button class="flex items-center gap-2 px-4 py-2 bg-primary text-white rounded-2xl hover:opacity-90 transition-all">
+<span class="material-symbols-outlined">notifications_active</span>
+<span class="font-label-md">Nouveaux</span>
+</button>
+<button class="p-3 rounded-2xl bg-surface-container-high text-on-surface hover:bg-surface-container-low transition-all">
+<span class="material-symbols-outlined">help_outline</span>
+</button>
+</div>
+</div>
+</header>
+<main class="pt-20 px-md pb-xl">
+<div class="mx-auto max-w-[1400px] space-y-xl">
+<section class="grid grid-cols-1 xl:grid-cols-[0.7fr_0.5fr] gap-lg">
+<div class="alert-card p-lg space-y-lg">
+<div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+<div>
+<p class="text-xs uppercase tracking-[0.24em] text-outline">Suivi des alertes</p>
+<h2 class="text-headline-md font-bold text-on-surface">Tableau des notifications</h2>
+<p class="text-body-sm text-on-surface-variant mt-2">Recevez et réagissez rapidement aux événements opérationnels et ESG.</p>
+</div>
+<div class="flex flex-wrap gap-3">
+<button class="px-5 py-2 rounded-full bg-secondary-container text-secondary font-semibold hover:bg-secondary/10 transition-all">Paramètres</button>
+<button class="px-5 py-2 rounded-full bg-primary text-white font-semibold hover:bg-primary-container transition-all">Marquer tout lu</button>
+</div>
+</div>
+<div class="rounded-3xl bg-surface-container-low p-4 border border-outline-variant/20">
+<div class="flex items-center justify-between mb-4">
+<div>
+<p class="text-xs uppercase tracking-[0.24em] text-outline">Statistiques</p>
+<h3 class="text-headline-sm font-bold">6 alertes critiques</h3>
+</div>
+<span class="status-badge bg-error-container text-error">Urgent</span>
+</div>
+<div class="grid grid-cols-2 gap-4 text-sm text-on-surface-variant">
+<div class="rounded-3xl bg-white p-4">
+<p class="font-bold text-headline-sm">14</p>
+<p>Notifications</p>
+</div>
+<div class="rounded-3xl bg-white p-4">
+<p class="font-bold text-headline-sm">3</p>
+<p>Alerte critique</p>
+</div>
+<div class="rounded-3xl bg-white p-4">
+<p class="font-bold text-headline-sm">7</p>
+<p>Actions requises</p>
+</div>
+<div class="rounded-3xl bg-white p-4">
+<p class="font-bold text-headline-sm">94%</p>
+<p>Réponse dans 24h</p>
+</div>
+</div>
+</div>
+<div class="space-y-4">
+<div class="rounded-3xl bg-white p-5 border border-outline-variant/20">
+<div class="flex items-center justify-between mb-3">
+<div>
+<p class="text-xs uppercase tracking-[0.24em] text-outline">Alerte</p>
+<h3 class="font-semibold">Dépassement consommation d'eau</h3>
+</div>
+<span class="status-badge bg-error/10 text-error">Critique</span>
+</div>
+<p class="text-body-sm text-on-surface-variant">Bâtiment pédagogique A dépasse de 18% la moyenne quotidienne.</p>
+<p class="text-xs text-on-surface-variant mt-3">Recommandation: envoyer équipe maintenance avant 18h.</p>
+</div>
+<div class="rounded-3xl bg-white p-5 border border-outline-variant/20">
+<div class="flex items-center justify-between mb-3">
+<div>
+<p class="text-xs uppercase tracking-[0.24em] text-outline">Notification</p>
+<h3 class="font-semibold">Nouveau rapport soumis</h3>
+</div>
+<span class="status-badge bg-primary/10 text-primary">Information</span>
+</div>
+<p class="text-body-sm text-on-surface-variant">Rapport énergie Q2 sera disponible pour revue.</p>
+<p class="text-xs text-on-surface-variant mt-3">Responsable: Aïcha Traoré</p>
+</div>
+<div class="rounded-3xl bg-white p-5 border border-outline-variant/20">
+<div class="flex items-center justify-between mb-3">
+<div>
+<p class="text-xs uppercase tracking-[0.24em] text-outline">Alerte</p>
+<h3 class="font-semibold">Accès non autorisé détecté</h3>
+</div>
+<span class="status-badge bg-secondary-container/10 text-secondary-container">A vérifier</span>
+</div>
+<p class="text-body-sm text-on-surface-variant">Tentative de connexion refusée depuis un appareil inconnu.</p>
+<p class="text-xs text-on-surface-variant mt-3">Action recommandée: réinitialiser accès.</p>
+</div>
+</div>
+</div>
+<aside class="space-y-lg">
+<div class="alert-card p-lg rounded-3xl">
+<div class="flex items-center justify-between mb-5">
+<h3 class="text-headline-sm font-bold">Canaux d'alerte</h3>
+<button class="text-primary hover:text-primary-container transition-colors">Modifier</button>
+</div>
+<ul class="space-y-4 text-body-sm text-on-surface-variant">
+<li class="rounded-3xl bg-surface-container-low p-4 flex items-center justify-between">
+<div class="flex items-center gap-3"><span class="material-symbols-outlined text-primary">email</span>Courriel</div>
+<span class="text-sm text-on-surface-variant">Activé</span>
+</li>
+<li class="rounded-3xl bg-surface-container-low p-4 flex items-center justify-between">
+<div class="flex items-center gap-3"><span class="material-symbols-outlined text-secondary">sms</span>SMS</div>
+<span class="text-sm text-on-surface-variant">Désactivé</span>
+</li>
+<li class="rounded-3xl bg-surface-container-low p-4 flex items-center justify-between">
+<div class="flex items-center gap-3"><span class="material-symbols-outlined text-tertiary">notifications</span>Push</div>
+<span class="text-sm text-on-surface-variant">Activé</span>
+</li>
+</ul>
+</div>
+<div class="alert-card p-lg rounded-3xl">
+<h3 class="text-headline-sm font-bold mb-5">Actions rapides</h3>
+<div class="space-y-4 text-body-sm text-on-surface-variant">
+<button class="w-full rounded-3xl bg-surface-container-low p-4 text-left hover:bg-surface-container-high transition-all">Définir seuils critiques</button>
+<button class="w-full rounded-3xl bg-surface-container-low p-4 text-left hover:bg-surface-container-high transition-all">Allouer notifications</button>
+<button class="w-full rounded-3xl bg-surface-container-low p-4 text-left hover:bg-surface-container-high transition-all">Configurer alertes</button>
+</div>
+</div>
+</aside>
+</section>
+</div>
+</main>
+</div>
+</body></html>

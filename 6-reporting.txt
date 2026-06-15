@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+
+<html class="light" lang="fr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>2iE ESG Manager - Reporting</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;900&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary-fixed": "#00210e",
+                        "inverse-primary": "#83d99d",
+                        "secondary-fixed": "#ffdcc6",
+                        "surface-container-lowest": "#ffffff",
+                        "outline": "#6f7a70",
+                        "on-secondary-fixed-variant": "#723600",
+                        "on-secondary-container": "#642f00",
+                        "tertiary-fixed-dim": "#92d5a7",
+                        "error": "#ba1a1a",
+                        "on-background": "#0b1c30",
+                        "surface-variant": "#d3e4fe",
+                        "primary-fixed": "#9ef5b8",
+                        "surface-bright": "#f8f9ff",
+                        "surface-container-highest": "#d3e4fe",
+                        "secondary-container": "#ff8928",
+                        "primary": "#004d28",
+                        "on-tertiary-fixed": "#00210f",
+                        "surface-container-high": "#dce9ff",
+                        "on-secondary-fixed": "#311300",
+                        "tertiary": "#014e2b",
+                        "on-error": "#ffffff",
+                        "surface-container": "#e5eeff",
+                        "on-primary": "#ffffff",
+                        "on-tertiary-fixed-variant": "#08522e",
+                        "primary-container": "#006838",
+                        "error-container": "#ffdad6",
+                        "outline-variant": "#bec9be",
+                        "inverse-surface": "#213145",
+                        "on-primary-container": "#8ee4a8",
+                        "surface-container-low": "#eff4ff",
+                        "background": "#f8f9ff",
+                        "primary-fixed-dim": "#83d99d",
+                        "on-error-container": "#93000a",
+                        "on-surface": "#0b1c30",
+                        "secondary": "#964900",
+                        "surface-tint": "#0b6d3c",
+                        "tertiary-container": "#246640",
+                        "on-secondary": "#ffffff",
+                        "on-surface-variant": "#3f4940",
+                        "inverse-on-surface": "#eaf1ff",
+                        "secondary-fixed-dim": "#ffb786",
+                        "surface": "#f8f9ff",
+                        "on-primary-fixed-variant": "#00522b",
+                        "tertiary-fixed": "#adf2c1",
+                        "on-tertiary-container": "#9de1b2",
+                        "on-tertiary": "#ffffff",
+                        "surface-dim": "#cbdbf5"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "base": "4px",
+                        "md": "24px",
+                        "gutter": "24px",
+                        "margin-desktop": "48px",
+                        "xs": "8px",
+                        "margin-mobile": "16px",
+                        "sm": "16px",
+                        "xl": "64px",
+                        "lg": "40px"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["Montserrat"],
+                        "label-md": ["Inter"],
+                        "body-md": ["Inter"],
+                        "body-sm": ["Inter"],
+                        "display-lg": ["Montserrat"],
+                        "body-lg": ["Inter"],
+                        "headline-sm": ["Montserrat"]
+                    },
+                    "fontSize": {
+                        "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                        "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "headline-sm": ["20px", {"lineHeight": "28px", "fontWeight": "600"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body { background-color: #f5f7fb; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .document-card {
+            background: white;
+            border-radius: 24px;
+            box-shadow: 0 20px 50px rgba(15, 23, 42, 0.08);
+        }
+        .document-card:hover { transform: translateY(-4px); }
+        .status-pill { padding: 0.45rem 0.9rem; border-radius: 999px; font-size: 0.75rem; font-weight: 700; display: inline-flex; align-items: center; }
+    </style>
+</head>
+<body class="font-body-md text-on-surface">
+<div class="min-h-screen">
+<header class="fixed inset-x-0 top-0 z-50 bg-white/90 backdrop-blur-sm border-b border-outline-variant shadow-sm">
+<div class="mx-auto flex h-16 items-center justify-between px-md">
+<div class="flex items-center gap-sm">
+<button class="p-2 rounded-xl bg-surface-container-lowest text-on-surface hover:bg-surface-container-high transition-all">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<div>
+<p class="text-xs uppercase tracking-[0.24em] text-outline">Reporting / Documents</p>
+<h1 class="text-headline-sm font-bold text-on-surface">Centre de Reporting</h1>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<button class="flex items-center gap-2 px-4 py-2 bg-primary text-white rounded-2xl hover:opacity-90 transition-all">
+<span class="material-symbols-outlined">add</span>
+<span class="font-label-md">Nouveau rapport</span>
+</button>
+<button class="p-3 rounded-2xl bg-surface-container-high text-on-surface hover:bg-surface-container-low transition-all">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+</div>
+</div>
+</header>
+<main class="pt-20 px-md pb-xl">
+<div class="mx-auto max-w-[1400px] space-y-xl">
+<section class="grid grid-cols-1 xl:grid-cols-[1.2fr_0.8fr] gap-lg">
+<div class="space-y-lg">
+<div class="document-card p-lg">
+<div class="flex flex-col sm:flex-row justify-between gap-4 mb-6">
+<div>
+<p class="text-xs uppercase tracking-[0.24em] text-outline">Synthèse de reporting</p>
+<h2 class="text-headline-md font-bold text-on-surface">Rapports disponibles et suivis</h2>
+<p class="text-body-sm text-on-surface-variant mt-2">Visualisez l'état des rapports ESG en cours et obtenez un accès rapide aux documents clés.</p>
+</div>
+<div class="flex flex-wrap gap-3">
+<button class="px-5 py-2 rounded-full bg-secondary-container text-secondary font-semibold hover:bg-secondary/10 transition-all">Filtrer par statut</button>
+<button class="px-5 py-2 rounded-full bg-primary text-white font-semibold hover:bg-primary-container transition-all">Télécharger tout</button>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="rounded-3xl bg-surface-container-low p-6 border border-outline-variant/20">
+<p class="text-xs uppercase tracking-[0.24em] text-outline mb-4">Rapports publiés</p>
+<h3 class="text-3xl font-bold text-primary">18</h3>
+<p class="mt-3 text-body-sm text-on-surface-variant">Rapports annuels, audits, et indicateurs Q.</p>
+</div>
+<div class="rounded-3xl bg-surface-container-low p-6 border border-outline-variant/20">
+<p class="text-xs uppercase tracking-[0.24em] text-outline mb-4">En cours</p>
+<h3 class="text-3xl font-bold text-secondary-container">5</h3>
+<p class="mt-3 text-body-sm text-on-surface-variant">Rapports en cours de validation et de révision.</p>
+</div>
+</div>
+</div>
+<div class="document-card bg-white p-lg">
+<div class="flex items-center justify-between mb-6">
+<div>
+<h3 class="text-headline-sm font-bold">Flux de rapports</h3>
+<p class="text-body-sm text-on-surface-variant">Suivez les derniers documents générés.</p>
+</div>
+<button class="px-4 py-2 rounded-full border border-outline-variant text-on-surface hover:bg-surface-container-low transition-all">Actualiser</button>
+</div>
+<div class="space-y-4">
+<div class="rounded-3xl bg-surface-container-low p-5 flex items-start gap-4">
+<span class="material-symbols-outlined text-primary mt-1">description</span>
+<div>
+<p class="font-semibold">Rapport de durabilité Q2 2024</p>
+<p class="text-xs text-on-surface-variant">Actif - En attente de validation</p>
+</div>
+</div>
+<div class="rounded-3xl bg-surface-container-low p-5 flex items-start gap-4">
+<span class="material-symbols-outlined text-secondary-container mt-1">insert_drive_file</span>
+<div>
+<p class="font-semibold">Audit environnemental campus</p>
+<p class="text-xs text-on-surface-variant">Téléchargé - 12 Sept 2024</p>
+</div>
+</div>
+<div class="rounded-3xl bg-surface-container-low p-5 flex items-start gap-4">
+<span class="material-symbols-outlined text-tertiary mt-1">assignment_turned_in</span>
+<div>
+<p class="font-semibold">Plan d'action gouvernance</p>
+<p class="text-xs text-on-surface-variant">En préparation</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<aside class="space-y-lg">
+<div class="rounded-3xl bg-white p-lg shadow-sm border border-outline-variant/20">
+<div class="flex items-center justify-between mb-6">
+<h3 class="text-headline-sm font-bold">Rapport phare</h3>
+<span class="status-pill text-primary/95 bg-primary/10">Publié</span>
+</div>
+<div class="space-y-4 text-body-sm text-on-surface-variant">
+<div>
+<p class="text-xs uppercase tracking-[0.24em] text-outline mb-2">Titre</p>
+<p class="font-semibold text-on-surface">Rapport d'impact RSE 2023</p>
+</div>
+<div>
+<p class="text-xs uppercase tracking-[0.24em] text-outline mb-2">Résumé</p>
+<p>Un bilan complet des engagements ESG et recommandations stratégiques pour 2024.</p>
+</div>
+<div class="flex items-center justify-between gap-4">
+<button class="flex items-center gap-2 px-4 py-2 rounded-full border border-outline-variant text-on-surface hover:bg-surface-container-low transition-all">
+<span class="material-symbols-outlined">preview</span>Voir
+</button>
+<button class="flex items-center gap-2 px-4 py-2 rounded-full bg-primary text-white hover:bg-primary-container transition-all">
+<span class="material-symbols-outlined">download</span>Télécharger
+</button>
+</div>
+</div>
+</div>
+<div class="rounded-3xl bg-white p-lg shadow-sm border border-outline-variant/20">
+<h3 class="text-headline-sm font-bold mb-6">Statistiques</h3>
+<div class="space-y-4 text-body-sm text-on-surface-variant">
+<div class="flex justify-between">
+<span>Rapports / mois</span>
+<strong>4</strong>
+</div>
+<div class="flex justify-between">
+<span>Documents en attente</span>
+<strong>2</strong>
+</div>
+<div class="flex justify-between">
+<span>Alertes de conformité</span>
+<strong>1</strong>
+</div>
+</div>
+</div>
+</aside>
+</section>
+<section class="grid grid-cols-1 lg:grid-cols-3 gap-lg">
+<div class="document-card p-lg">
+<div class="flex items-center justify-between mb-5">
+<h3 class="font-bold text-headline-sm">Modèles de rapports</h3>
+<button class="text-primary hover:text-primary-container transition-colors">Voir tout</button>
+</div>
+<div class="space-y-4 text-body-sm text-on-surface-variant">
+<div class="rounded-3xl bg-surface-container-low p-4 flex items-center justify-between">
+<div>
+<p class="font-semibold">ESG Standard</p>
+<p class="text-xs">Annuel, trimestriel</p>
+</div>
+<button class="text-primary">Utiliser</button>
+</div>
+<div class="rounded-3xl bg-surface-container-low p-4 flex items-center justify-between">
+<div>
+<p class="font-semibold">Audit Energie</p>
+<p class="text-xs">Rapport énergie</p>
+</div>
+<button class="text-primary">Utiliser</button>
+</div>
+<div class="rounded-3xl bg-surface-container-low p-4 flex items-center justify-between">
+<div>
+<p class="font-semibold">Mobilité Verte</p>
+<p class="text-xs">Plan d'action</p>
+</div>
+<button class="text-primary">Utiliser</button>
+</div>
+</div>
+</div>
+<div class="document-card p-lg">
+<h3 class="font-bold text-headline-sm mb-5">Derniers commentaires</h3>
+<div class="space-y-4 text-body-sm text-on-surface-variant">
+<div class="rounded-3xl bg-surface-container-low p-4">
+<p class="font-semibold">Marie D.</p>
+<p class="text-xs mt-1">« Le rapport énergétique nécessite un volet mobilité plus détaillé. »</p>
+</div>
+<div class="rounded-3xl bg-surface-container-low p-4">
+<p class="font-semibold">Yacouba N.</p>
+<p class="text-xs mt-1">« Inclure les indicateurs de gestion des déchets dans le prochain rapport. »</p>
+</div>
+</div>
+</div>
+<div class="document-card p-lg">
+<h3 class="font-bold text-headline-sm mb-5">Rappels</h3>
+<ul class="space-y-4 text-body-sm text-on-surface-variant">
+<li class="rounded-3xl bg-surface-container-low p-4">Soumettre le rapport annuel avant le 15 Nov</li>
+<li class="rounded-3xl bg-surface-container-low p-4">Valider la conformité ISO 14001</li>
+<li class="rounded-3xl bg-surface-container-low p-4">Envoyer synthèse aux parties prenantes</li>
+</ul>
+</div>
+</section>
+</div>
+</main>
+</div>
+</body></html>

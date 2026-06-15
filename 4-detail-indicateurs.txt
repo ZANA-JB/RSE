@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+
+<html class="light" lang="fr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>2iE ESG Manager - Détail des Indicateurs</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;900&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary-fixed": "#00210e",
+                        "inverse-primary": "#83d99d",
+                        "secondary-fixed": "#ffdcc6",
+                        "surface-container-lowest": "#ffffff",
+                        "outline": "#6f7a70",
+                        "on-secondary-fixed-variant": "#723600",
+                        "on-secondary-container": "#642f00",
+                        "tertiary-fixed-dim": "#92d5a7",
+                        "error": "#ba1a1a",
+                        "on-background": "#0b1c30",
+                        "surface-variant": "#d3e4fe",
+                        "primary-fixed": "#9ef5b8",
+                        "surface-bright": "#f8f9ff",
+                        "surface-container-highest": "#d3e4fe",
+                        "secondary-container": "#ff8928",
+                        "primary": "#004d28",
+                        "on-tertiary-fixed": "#00210f",
+                        "surface-container-high": "#dce9ff",
+                        "on-secondary-fixed": "#311300",
+                        "tertiary": "#014e2b",
+                        "on-error": "#ffffff",
+                        "surface-container": "#e5eeff",
+                        "on-primary": "#ffffff",
+                        "on-tertiary-fixed-variant": "#08522e",
+                        "primary-container": "#006838",
+                        "error-container": "#ffdad6",
+                        "outline-variant": "#bec9be",
+                        "inverse-surface": "#213145",
+                        "on-primary-container": "#8ee4a8",
+                        "surface-container-low": "#eff4ff",
+                        "background": "#f8f9ff",
+                        "primary-fixed-dim": "#83d99d",
+                        "on-error-container": "#93000a",
+                        "on-surface": "#0b1c30",
+                        "secondary": "#964900",
+                        "surface-tint": "#0b6d3c",
+                        "tertiary-container": "#246640",
+                        "on-secondary": "#ffffff",
+                        "on-surface-variant": "#3f4940",
+                        "inverse-on-surface": "#eaf1ff",
+                        "secondary-fixed-dim": "#ffb786",
+                        "surface": "#f8f9ff",
+                        "on-primary-fixed-variant": "#00522b",
+                        "tertiary-fixed": "#adf2c1",
+                        "on-tertiary-container": "#9de1b2",
+                        "on-tertiary": "#ffffff",
+                        "surface-dim": "#cbdbf5"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "base": "4px",
+                        "md": "24px",
+                        "gutter": "24px",
+                        "margin-desktop": "48px",
+                        "xs": "8px",
+                        "margin-mobile": "16px",
+                        "sm": "16px",
+                        "xl": "64px",
+                        "lg": "40px"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["Montserrat"],
+                        "label-md": ["Inter"],
+                        "body-md": ["Inter"],
+                        "body-sm": ["Inter"],
+                        "display-lg": ["Montserrat"],
+                        "body-lg": ["Inter"],
+                        "headline-sm": ["Montserrat"]
+                    },
+                    "fontSize": {
+                        "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                        "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "headline-sm": ["20px", {"lineHeight": "28px", "fontWeight": "600"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body { background-color: #f8f9ff; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(14px);
+            border: 1px solid rgba(226, 232, 240, 0.85);
+        }
+        .progress-bar {
+            border-radius: 999px;
+            height: 10px;
+            width: 100%;
+            background: #e5eeff;
+        }
+        .progress-bar__fill {
+            height: 100%;
+            border-radius: 999px;
+            background: linear-gradient(90deg, #004d28 0%, #83d99d 100%);
+        }
+    </style>
+</head>
+<body class="font-body-md text-on-surface">
+<!-- Page Wrapper -->
+<div class="min-h-screen bg-surface">
+<header class="fixed w-full bg-surface bg-opacity-95 backdrop-blur-sm border-b border-outline-variant z-40">
+<div class="mx-auto flex items-center justify-between px-md h-16">
+<div class="flex items-center gap-sm">
+<button class="p-2 rounded-xl bg-surface-container-lowest text-on-surface hover:bg-surface-container-high transition-all">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<div>
+<p class="text-xs uppercase text-outline">Tableau de bord / Indicateurs</p>
+<h1 class="font-headline-md text-headline-md text-on-surface">Détails de l'indicateur choisi</h1>
+</div>
+</div>
+<div class="flex items-center gap-sm">
+<button class="flex items-center gap-2 rounded-xl px-4 py-2 bg-primary text-on-primary hover:opacity-90 transition-all">
+<span class="material-symbols-outlined">download</span>
+<span class="font-label-md">Exporter</span>
+</button>
+<button class="p-3 rounded-xl bg-surface-container-high text-on-surface hover:bg-surface-container-low transition-all">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="p-3 rounded-xl bg-surface-container-high text-on-surface hover:bg-surface-container-low transition-all">
+<span class="material-symbols-outlined">account_circle</span>
+</button>
+</div>
+</div>
+</header>
+<main class="pt-20 px-md pb-xl">
+<div class="max-w-[1440px] mx-auto space-y-lg">
+<!-- Primary Panel -->
+<section class="grid grid-cols-1 xl:grid-cols-[1.4fr_0.9fr] gap-lg">
+<div class="space-y-lg">
+<div class="glass-panel rounded-3xl p-lg shadow-[0_24px_80px_rgba(0,0,0,0.08)]">
+<div class="flex flex-col gap-md">
+<div class="flex flex-col sm:flex-row justify-between gap-sm">
+<div>
+<span class="text-xs uppercase tracking-[0.24em] text-outline">Indicateurs</span>
+<h2 class="font-headline-md text-headline-md text-on-surface mt-2">Consommation d'eau par étudiant</h2>
+<p class="text-body-sm text-on-surface-variant">Analyse complète de l'utilisation d'eau sur les campus et l'optimisation des programmes de conservation.</p>
+</div>
+<div class="flex flex-wrap gap-2">
+<span class="inline-flex items-center gap-2 rounded-full bg-secondary-container/15 px-4 py-2 text-sm font-semibold text-secondary-container">
+<span class="material-symbols-outlined">calendar_today</span>
+Q1 2024
+</span>
+<span class="inline-flex items-center gap-2 rounded-full bg-primary/10 px-4 py-2 text-sm font-semibold text-primary">
+<span class="material-symbols-outlined">trending_up</span>
+Tendance Stable
+</span>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div class="rounded-3xl bg-surface-container-low p-5 shadow-sm">
+<p class="text-xs uppercase tracking-[0.24em] text-outline mb-2">Valeur actuelle</p>
+<p class="text-headline-sm font-bold">4.8 m³/étudiant</p>
+</div>
+<div class="rounded-3xl bg-surface-container-low p-5 shadow-sm">
+<p class="text-xs uppercase tracking-[0.24em] text-outline mb-2">Objectif cible</p>
+<p class="text-headline-sm font-bold">4.2 m³/étudiant</p>
+</div>
+</div>
+<div class="rounded-3xl bg-white p-6 shadow-sm">
+<div class="flex items-center justify-between mb-4">
+<p class="text-sm font-semibold">Performance vs objectif</p>
+<span class="inline-flex items-center gap-1 rounded-full bg-error-container/10 px-3 py-1 text-xs text-error font-bold">10% au-dessus</span>
+</div>
+<div class="progress-bar">
+<div class="progress-bar__fill" style="width: 70%;"></div>
+</div>
+<div class="mt-4 grid grid-cols-2 gap-4 text-sm text-on-surface-variant">
+<div>
+<p class="font-semibold text-on-surface">Historique 12 mois</p>
+<p>Volume d'eau en baisse grâce aux nouvelles points de collecte.</p>
+</div>
+<div>
+<p class="font-semibold text-on-surface">Actions recommandées</p>
+<p>Campagne de sensibilisation + audit pièces sanitaires.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Secondary Panel -->
+<aside class="space-y-lg">
+<div class="glass-panel rounded-3xl p-lg shadow-[0_24px_80px_rgba(0,0,0,0.08)]">
+<div class="flex items-center justify-between mb-4">
+<h3 class="font-headline-sm">Statut de conformité</h3>
+<span class="px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-bold uppercase">À surveiller</span>
+</div>
+<div class="space-y-4">
+<div class="rounded-3xl bg-surface-container-low p-4">
+<p class="text-xs uppercase tracking-[0.24em] text-outline mb-2">Écart carbone</p>
+<div class="flex items-center justify-between gap-2">
+<div>
+<p class="font-bold">+6.2%</p>
+<p class="text-xs text-on-surface-variant">vs Q1 2023</p>
+</div>
+<span class="material-symbols-outlined text-error">trending_up</span>
+</div>
+</div>
+<div class="rounded-3xl bg-surface-container-low p-4">
+<p class="text-xs uppercase tracking-[0.24em] text-outline mb-2">Risque réglementaire</p>
+<div class="flex items-center justify-between gap-2">
+<div>
+<p class="font-bold">Modéré</p>
+<p class="text-xs text-on-surface-variant">Nouveaux seuils URD</p>
+</div>
+<span class="material-symbols-outlined text-secondary-fixed">policy</span>
+</div>
+</div>
+<div class="rounded-3xl bg-surface-container-low p-4">
+<p class="text-xs uppercase tracking-[0.24em] text-outline mb-2">Initiative prioritaire</p>
+<p class="font-semibold">Réduction des fuites d'eau</p>
+<p class="text-xs text-on-surface-variant mt-1">Audit du réseau + remplacement vannes Q2.</p>
+</div>
+</div>
+</div>
+<div class="glass-panel rounded-3xl p-lg shadow-[0_24px_80px_rgba(0,0,0,0.08)]">
+<div class="flex items-center justify-between mb-4">
+<h3 class="font-headline-sm">Données associées</h3>
+<span class="text-xs text-on-surface-variant">Sources</span>
+</div>
+<ul class="space-y-3 text-sm text-on-surface-variant">
+<li class="flex items-start gap-3"><span class="material-symbols-outlined text-primary">check_circle</span>Compteurs d'eau campus Ouagadougou</li>
+<li class="flex items-start gap-3"><span class="material-symbols-outlined text-primary">check_circle</span>Rapport mensuel du service technique</li>
+<li class="flex items-start gap-3"><span class="material-symbols-outlined text-primary">check_circle</span>Contrôles qualité et conformité ISO 14001</li>
+</ul>
+</div>
+</aside>
+</section>
+<!-- Insight Cards -->
+<section class="grid grid-cols-1 lg:grid-cols-3 gap-lg">
+<div class="glass-panel rounded-3xl p-lg shadow-[0_24px_80px_rgba(0,0,0,0.08)]">
+<h3 class="font-headline-sm mb-4">Observations Clés</h3>
+<ul class="space-y-4 text-body-sm text-on-surface-variant">
+<li class="flex gap-3"><span class="material-symbols-outlined text-secondary">arrow_right_alt</span>Le campus réduit sa consommation de 8% par rapport à 2023.</li>
+<li class="flex gap-3"><span class="material-symbols-outlined text-secondary">arrow_right_alt</span>Les bâtiments A et B affichent les plus fortes économies.</li>
+<li class="flex gap-3"><span class="material-symbols-outlined text-secondary">arrow_right_alt</span>Des programmes de sensibilisation sont prévus sur Q2.</li>
+</ul>
+</div>
+<div class="glass-panel rounded-3xl p-lg shadow-[0_24px_80px_rgba(0,0,0,0.08)]">
+<h3 class="font-headline-sm mb-4">Actions Utilisateur</h3>
+<ul class="space-y-4 text-body-sm text-on-surface-variant">
+<li class="flex gap-3"><span class="material-symbols-outlined text-primary">arrow_right_alt</span><strong>Planifier un audit</strong> du réseau hydrique.</li>
+<li class="flex gap-3"><span class="material-symbols-outlined text-primary">arrow_right_alt</span><strong>Créer un plan d'économie</strong> pour les dormitories.</li>
+<li class="flex gap-3"><span class="material-symbols-outlined text-primary">arrow_right_alt</span><strong>Ajouter un objectif</strong> lié à la récupération d'énergie.</li>
+</ul>
+</div>
+<div class="glass-panel rounded-3xl p-lg shadow-[0_24px_80px_rgba(0,0,0,0.08)]">
+<h3 class="font-headline-sm mb-4">Statistiques Rapides</h3>
+<div class="space-y-4">
+<div class="rounded-3xl bg-surface-container-low p-5">
+<p class="text-xs uppercase tracking-[0.24em] text-outline mb-2">Économies annuelles</p>
+<p class="text-headline-sm font-bold">12%</p>
+</div>
+<div class="rounded-3xl bg-surface-container-low p-5">
+<p class="text-xs uppercase tracking-[0.24em] text-outline mb-2">Fuites détectées</p>
+<p class="text-headline-sm font-bold">2</p>
+</div>
+<div class="rounded-3xl bg-surface-container-low p-5">
+<p class="text-xs uppercase tracking-[0.24em] text-outline mb-2">Actions en cours</p>
+<p class="text-headline-sm font-bold">4</p>
+</div>
+</div>
+</div>
+</section>
+</div>
+</main>
+</div>
+<script>
+        // Placeholder for interactive elements if needed.
+        const buttons = document.querySelectorAll('button');
+        buttons.forEach(btn => btn.addEventListener('mouseenter', () => btn.classList.add('shadow-lg')));
+        buttons.forEach(btn => btn.addEventListener('mouseleave', () => btn.classList.remove('shadow-lg')));
+    </script>
+</body></html>
